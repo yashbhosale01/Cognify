@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Webpage with Form and Navigation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-left: 20px;
+        }
+
+        p {
+            color: #666;
+            margin-left: 20px;
+        }
+
+        img {
+            max-width: 40%;
+            height: auto;
+            margin-top: 10px;
+            margin-left: 30px;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 20px auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <h1>Welcome to Yash's Webpage</h1>
+    <p>This is a paragraph of text. You can add more content here.</p>
+    <img src="https://media.licdn.com/dms/image/D4E12AQFW1dqLQPVE-Q/article-cover_image-shrink_600_2000/0/1670511843861?e=2147483647&v=beta&t=IUZVILXubjY_spgPfdmQYq6uJmhPCrajh9EiLlxWhmQ" alt="Description of the image">
+
+    <form>
+        <label for="username">Enter Your Mail:</label>
+        <input type="text" id="username" name="username" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

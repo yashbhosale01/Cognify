@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Examples</title>
+    <style>
+        #colorChangeButton {
+            padding: 20px;
+            align-items: center;
+            margin-top: 300px;
+            margin-left: 650px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Button that changes its color when clicked -->
+<button id="colorChangeButton" onclick="changeColor()">Click here to change color</button>
+
+<!-- Greeting message based on current time -->
+<script>
+    // Function to get a greeting based on the current time
+    function getGreeting() {
+        const currentTime = new Date().getHours();
+        if (currentTime < 12) {
+            return "Good morning!";
+        } else if (currentTime < 18) {
+            return "Good afternoon!";
+        } else {
+            return "Good evening!";
+        }
+    }
+
+    // Display greeting in an alert box
+    alert(getGreeting());
+</script>
+
+<!-- Calculator that adds two numbers and displays the result -->
+<script>
+    // Function to add two numbers
+    function addNumbers() {
+        const num1 = parseFloat(prompt("Enter the first number:"));
+        const num2 = parseFloat(prompt("Enter the second number:"));
+        
+        if (!isNaN(num1) && !isNaN(num2)) {
+            const result = num1 + num2;
+            alert("The result is: " + result);
+        } else {
+            alert("Invalid input. Please enter valid numbers.");
+        }
+    }
+
+    // Call the addNumbers function
+    addNumbers();
+</script>
+
+<script>
+    // Function to change the color of the button
+    function changeColor() {
+        const button = document.getElementById("colorChangeButton");
+        const randomColor = getRandomColor();
+        button.style.backgroundColor = randomColor;
+    }
+
+    // Function to generate a random color
+    function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+</script>
+
+</body>
+</html>

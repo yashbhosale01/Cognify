@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Gallery with Slideshow</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+
+    h1 {
+        text-align: center;
+        padding: 20px;
+        background-color: #3498db;
+        color: #fff;
+        margin: 0;
+    }
+
+    .Yash_bhosale {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .thumbnail {
+        margin: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .thumbnail img {
+        width: 250px;
+        height: 150px;
+    }
+
+    .thumbnail:hover {
+        transform: scale(1.1);
+    }
+
+    .slideshow-container {
+        max-width: 600px;
+        position: relative;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .mySlides {
+        display: none;
+    }
+
+    .mySlides img {
+        width: 100%;
+        height: auto;
+    }
+
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        cursor: pointer;
+    }
+
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+</style>
+</head>
+<body>
+
+<h1>Image Gallery with Slideshow</h1>
+
+    <div class="Yash_bhosale">
+        <div class="thumbnail" onclick="openModal();currentSlide(1)">
+            <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--bRKkaTuR--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zjd3xajot2gfanya6p4b.jpg" alt="Image 1">
+        </div>
+
+        <div class="thumbnail" onclick="openModal();currentSlide(2)">
+            <img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/12/Data-Science-Applications-Edureka.jpg" alt="Image 2">
+        </div>
+
+        <div class="thumbnail" onclick="openModal();currentSlide(3)">
+            <img src="https://agilitegroup.com/wp-content/uploads/2022/02/IMG-20220224-WA0017.jpg" alt="Image 3">
+        </div>
+
+        </div>
+
+        <div id="myModal" class="slideshow-container">
+        <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
+        <span class="next" onclick="plusSlides(1)">&#10095;</span>
+
+        <div class="mySlides">
+            <img src="https://media.licdn.com/dms/image/D5612AQE4Lhzeu-Yc3g/article-cover_image-shrink_720_1280/0/1698995535329?e=2147483647&v=beta&t=caj-Vh1eF-3z94l5YKZxZZTZWqTLPs4lBEEm23ZXAUU" alt="Image 1">
+        </div>
+        <div class="mySlides">
+            <img src="https://media.cloudbooklet.com/uploads/2023/02/25072508/Build-a-Successful-Career-in-Data-Science_-Essential-Skills-and-Tips.jpg" alt="Image 2">
+        </div>
+        <div class="mySlides">
+            <img src="https://media.licdn.com/dms/image/D4E12AQFW1dqLQPVE-Q/article-cover_image-shrink_600_2000/0/1670511843861?e=2147483647&v=beta&t=IUZVILXubjY_spgPfdmQYq6uJmhPCrajh9EiLlxWhmQ" alt="Image 3">
+        </div>
+        <!-- Add more slides as needed -->
+        </div>
+
+<script>
+    let slideIndex = 1;
+
+    function openModal() {
+        document.getElementById('myModal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('myModal').style.display = 'none';
+    }
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName('mySlides');
+        if (n > slides.length) {
+        slideIndex = 1;
+        }
+        if (n < 1) {
+        slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+        }
+        slides[slideIndex - 1].style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
